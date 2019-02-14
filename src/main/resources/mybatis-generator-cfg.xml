@@ -17,24 +17,27 @@
 		<!-- 2.修改mysql 数据源 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 
-		connectionURL="jdbc:mysql://server.chuhui.com:3306/chuhui_eldestbrother"
+		connectionURL="jdbc:mysql://localhost:3306/databaseName"
 						userId="root"
-			password="ZXCvbnm123!@#" />
+			password="123456" />
 
 		<!-- 3.修改model、Dao、Mapper存放目录 -->
-		<javaModelGenerator targetPackage="com.chuhui.eldestbrother.model"
+		<!--数据库表的对象模型位置-->
+		<javaModelGenerator targetPackage="com.chuhui.xxx.model"
 			targetProject="src/main/java" />
 
-		<sqlMapGenerator targetPackage="com.chuhui.eldestbrother.impl"
+		<!--mapper文件的位置-->
+		<sqlMapGenerator targetPackage="com.chuhui.xxxx.impl"
 			targetProject="src/main/java" />
 
-		<javaClientGenerator targetPackage="com.chuhui.eldestbrother.dao"
+		<!--dao接口的位置-->
+		<javaClientGenerator targetPackage="com.chuhui.xxxx.dao"
 			targetProject="src/main/java" type="XMLMAPPER" />
 
 
 		<!-- 4.填写表名和实体类名 -->
 		<!--<table tableName="test" domainObjectName="Test" ></table>-->
-		<table tableName="eldest_brother_verification_msg_info" domainObjectName="VerificationMsgInfo" enableCountByExample="false" enableDeleteByExample="false"
+		<table tableName="table_name" domainObjectName="TableName" enableCountByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" enableUpdateByExample="false"></table>
 
 
