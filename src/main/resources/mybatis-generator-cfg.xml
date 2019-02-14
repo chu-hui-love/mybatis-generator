@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<!-- 1.修改mysql jar目录 -->
+	<classPathEntry
+		location="D:\MyLife\MavenPrivateRepository\mysql\mysql-connector-java\5.1.35\mysql-connector-java-5.1.35.jar" />
+
+	<context id="context1" targetRuntime="MyBatis3">
+
+		<!--<plugin type="org.mybatis.org.mybatis.generator.plugins.MySqlPaginationPlugin"/>-->
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- 2.修改mysql 数据源 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+
+		connectionURL="jdbc:mysql://server.chuhui.com:3306/chuhui_eldestbrother"
+						userId="root"
+			password="ZXCvbnm123!@#" />
+
+		<!-- 3.修改model、Dao、Mapper存放目录 -->
+		<javaModelGenerator targetPackage="com.chuhui.eldestbrother.model"
+			targetProject="src/main/java" />
+
+		<sqlMapGenerator targetPackage="com.chuhui.eldestbrother.impl"
+			targetProject="src/main/java" />
+
+		<javaClientGenerator targetPackage="com.chuhui.eldestbrother.dao"
+			targetProject="src/main/java" type="XMLMAPPER" />
+
+
+		<!-- 4.填写表名和实体类名 -->
+		<!--<table tableName="test" domainObjectName="Test" ></table>-->
+		<table tableName="eldest_brother_verification_msg_info" domainObjectName="VerificationMsgInfo" enableCountByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" enableUpdateByExample="false"></table>
+
+
+	</context>
+</generatorConfiguration>
